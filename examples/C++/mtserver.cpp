@@ -16,11 +16,12 @@ void *worker_routine (void *arg)
     zmq::socket_t socket (*context, ZMQ_REP);
     socket.connect ("inproc://workers");
 
+    auto id = pthread_self();
     while (true) {
         //  Wait for next request from client
         zmq::message_t request;
         socket.recv (&request);
-        std::cout << "Received request: [" << (char*) request.data() << "]" << std::endl;
+        std::cout << "Received request: [" << (char*) request.data() << "] " << id << std::endl;
 
         //  Do some 'work'
         sleep (1);

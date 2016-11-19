@@ -25,8 +25,7 @@ int main ()
             std::cout << "I: simulating a crash" << std::endl;
             break;
         }
-        else
-        if (cycles > 3 && within (3) == 0) {
+        else if (cycles > 3 && within (3) == 0) {
             std::cout << "I: simulating CPU overload" << std::endl;
             sleep (2);
         }

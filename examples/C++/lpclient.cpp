@@ -57,8 +57,7 @@ int main () {
                     std::cout << "E: malformed reply from server: " << reply << std::endl;
                 }
             }
-            else
-            if (--retries_left == 0) {
+            else if (--retries_left == 0) {
                 std::cout << "E: server seems to be offline, abandoning" << std::endl;
                 expect_reply = false;
                 break;

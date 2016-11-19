@@ -26,6 +26,7 @@ int main (int argc, char *argv[])
     std::cout << "Sending tasks to workers...\n" << std::endl;
 
     //  The first message is "0" and signals start of batch
+    //  通知sink可以开始工作, 防止消息丢失
     zmq::socket_t sink(context, ZMQ_PUSH);
     sink.connect("tcp://localhost:5558");
     zmq::message_t message(2);

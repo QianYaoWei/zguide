@@ -9,6 +9,11 @@
 
 int main ()
 {
+    // int major_;
+    // int minor_;
+    // int patch_;
+    // zmq::version (&major_, &minor_, &patch_);
+    // std::cout<<major_<<", "<<minor_<<", "<<patch_;
     //  Prepare our context and socket
     zmq::context_t context (1);
     zmq::socket_t socket (context, ZMQ_REQ);

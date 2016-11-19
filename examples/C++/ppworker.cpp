@@ -94,8 +94,7 @@ int main (void)
             }
             interval = INTERVAL_INIT;
         }
-        else
-        if (--liveness == 0) {
+        else if (--liveness == 0) {
             std::cout << "W: (" << identity << ") heartbeat failure, can't reach queue" << std::endl;
             std::cout << "W: (" << identity << ") reconnecting in " << interval << " msec..." << std::endl;
             s_sleep (interval);

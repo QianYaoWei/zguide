@@ -9,6 +9,9 @@
 //  We wait for 10 subscribers
 #define SUBSCRIBERS_EXPECTED  10
 
+// ZMQ_SNDHWM: Set high water mark for outbound messages
+// ZMQ_RCVHWM: Set high water mark for inbound messages
+
 int main () {
 	zmq::context_t context(1);
 

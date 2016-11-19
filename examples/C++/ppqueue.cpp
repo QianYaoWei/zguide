@@ -58,8 +58,7 @@ s_worker_refresh (std::vector<worker_t> &queue, std::string &identity)
     bool found = false;
     for (std::vector<worker_t>::iterator it = queue.begin(); it < queue.end(); it++) {
         if (it->identity.compare(identity) == 0) {
-           it->expiry = s_clock ()
-                 + HEARTBEAT_INTERVAL * HEARTBEAT_LIVENESS;
+           it->expiry = s_clock () + HEARTBEAT_INTERVAL * HEARTBEAT_LIVENESS;
            found = true;
            break;
         }
